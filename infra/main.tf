@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket = "terraform-state-backend-postech"
     key    = "arn:aws:s3:::terraform-state-backend-postech"
-    region = "east-us-1"
+    region = "us-east-1"
   }
 }
 
