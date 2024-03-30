@@ -10,7 +10,7 @@ terraform {
 
    backend "s3" {
        bucket = "terraform-state-backend-postech"
-       key    = "[Remote_State_S3_Bucket_Key]"
+       key    = "arn:aws:s3:::terraform-state-backend-postech"
        region = "east-us-1"
    }
 }
