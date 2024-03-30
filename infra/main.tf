@@ -2,11 +2,11 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~>3.27"
     }
   }
 
-  required_version = ">=0.14.9"
+#  required_version = ">=0.14.9"
 
   backend "s3" {
     bucket = "terraform-state-backend-postech"
