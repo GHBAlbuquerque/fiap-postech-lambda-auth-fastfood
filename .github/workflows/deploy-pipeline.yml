@@ -7,7 +7,7 @@ on:
 
 jobs:
   tf_fmt:
-    name: Deploy Site
+    name: deploy-aws
     runs-on: ubuntu-latest
     steps:
 

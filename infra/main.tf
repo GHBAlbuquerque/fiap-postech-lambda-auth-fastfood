@@ -1,13 +1,10 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-
+provider "aws" {
+  version = "~> 5.0"
+  region  = "us-east-1"
+}
 #  required_version = ">=0.14.9"
 
+terraform {
   backend "s3" {
     bucket = "terraform-state-backend-postech"
     key    = "arn:aws:s3:::terraform-state-backend-postech"
@@ -15,8 +12,4 @@ terraform {
   }
 }
 
-
-provider "aws" {
-  region  = "east-us-1"
-}
 
