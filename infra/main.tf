@@ -10,8 +10,9 @@ terraform {
 
   backend "s3" {
     bucket = "terraform-state-backend-postech"
-    key    = "arn:aws:s3:::terraform-state-backend-postech"
+    key    = "terraform.tfstate"
     region = "us-east-1"
+    encrypt = true
   }
 }
 
