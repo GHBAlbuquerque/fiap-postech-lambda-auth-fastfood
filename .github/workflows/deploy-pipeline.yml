@@ -3,18 +3,16 @@ name: Deploy Infrastructure
 on:
   push:
 #    branches:
-#      - master
+#      - main
 
 env:
-#  TF_ACTIONS_WORKING_DIR: './infra'
-#  TF_WORKSPACE: 'infra'
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
 
 jobs:
-  deploy_terraform_aws:
-    name: deploy-aws
+  validate_terraform:
+    name: validate_terraform
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,11 +34,38 @@ jobs:
         id: validate
         run: terraform -chdir="./infra" validate -no-color
 
-
       - name: Terraform Plan
         id: plan
         run: terraform -chdir="./infra" plan -no-color
         continue-on-error: true
+
+  deploy_terraform_aws:
+    name: deploy_terraform
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+
+#      - name: Terraform fmt
+#        id: fmt
+#        run: terraform -chdir="./infra" fmt -check -input=false
+#        continue-on-error: true
+#
+#      - name: Terraform Init
+#        id: init
+#        run: terraform -chdir="./infra" init -input=false
+#
+#      - name: Terraform Validate
+#        id: validate
+#        run: terraform -chdir="./infra" validate -no-color
+#
+#      - name: Terraform Plan
+#        id: plan
+#        run: terraform -chdir="./infra" plan -no-color
+#        continue-on-error: true
 
       - name: Terraform Apply
         id: apply
