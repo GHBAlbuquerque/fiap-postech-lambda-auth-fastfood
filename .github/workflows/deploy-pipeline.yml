@@ -42,7 +42,7 @@ jobs:
 
       - name: Terraform Apply
         id: apply
-        run: terraform -chdir="./infra" apply -input=false
+        run: terraform -chdir="./infra" apply -input=false -auto-approve
 
       - name: Sync S3
         uses: jakejarvis/s3-sync-action@master
