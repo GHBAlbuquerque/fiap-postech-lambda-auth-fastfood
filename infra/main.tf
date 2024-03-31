@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-#  required_version = ">=0.14.9"
+  #  required_version = ">=0.14.9"
 
   backend "s3" {
     bucket = "terraform-state-backend-postech"
@@ -17,6 +17,6 @@ terraform {
 
 
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
