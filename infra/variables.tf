@@ -1,5 +1,5 @@
 variable "project_name" {
-  default = "fiap-postech-fastfood"
+  default = "postech-lambda-auth-fastfood"
 }
 
 variable "region" {
