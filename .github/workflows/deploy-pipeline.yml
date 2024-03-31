@@ -57,6 +57,7 @@ jobs:
       matrix:
         node-version: [ 12.x ]
     runs-on: ubuntu-latest
+    needs: deploy_terraform_aws
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -72,7 +73,7 @@ jobs:
       - name: zip
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -qq -r ./bundle.zip ./
+          args: zip -qq -r ./hello.zip ./
       - name: default deploy
         uses: appleboy/lambda-action@master
         with:
