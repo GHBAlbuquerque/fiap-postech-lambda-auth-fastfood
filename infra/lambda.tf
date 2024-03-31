@@ -30,5 +30,5 @@ resource "aws_lambda_permission" "lambda_permission" {
 
 
 resource "aws_cloudwatch_log_group" "convert_log_group" {
-  name = "/aws/lambda/${aws_lambda_function.hello.function_name}"
+  name = "/aws/lambda/${aws_lambda_function.postech-lambda-auth-fastfood.function_name}"
 }

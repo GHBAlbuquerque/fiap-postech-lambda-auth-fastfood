@@ -1,5 +1,5 @@
 variable "project_name" {
-  default = ""
+  default = "fiap-postech-fastfood"
 }
 
 variable "region" {
