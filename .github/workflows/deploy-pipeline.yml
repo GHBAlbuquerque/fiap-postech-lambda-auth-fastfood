@@ -6,8 +6,8 @@ on:
 #      - master
 
 env:
-  TF_ACTION_WORKING_DIR: './infra'
-  TF_WORKSPACE: 'infra'
+#  TF_ACTIONS_WORKING_DIR: './infra'
+#  TF_WORKSPACE: 'infra'
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
@@ -25,41 +25,26 @@ jobs:
 
       - name: Terraform fmt
         id: fmt
-        run: terraform fmt -check
+        run: terraform -chdir="./infra" fmt -check -input=false
         continue-on-error: true
 
       - name: Terraform Init
         id: init
-        run: terraform init
-#        env:
-#          TF_ACTION_WORKING_DIR: './infra'
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+        run: terraform -chdir="./infra" init -input=false
 
       - name: Terraform Validate
         id: validate
-        run: terraform validate -no-color
+        run: terraform -chdir="./infra" validate -no-color
 
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform -chdir="./infra" plan -no-color
         continue-on-error: true
-#        env:
-#          TF_ACTION_WORKING_DIR: 'infra'
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
 
       - name: Terraform Apply
         id: apply
-        run: terraform apply
-#        env:
-#          TF_ACTION_WORKING_DIR: './infra'
-#          AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+        run: terraform -chdir="./infra" apply -input=false
 
       - name: Sync S3
         uses: jakejarvis/s3-sync-action@master
@@ -67,6 +52,3 @@ jobs:
           SOURCE_DIR: './src'
           AWS_REGION: 'us-east-1'
           AWS_S3_BUCKET: 'terraform-state-backend-postech'
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
