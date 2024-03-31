@@ -9,6 +9,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
+  TF_LOG: "DEBUG"
 
 jobs:
   deploy_terraform_aws:
@@ -32,7 +33,7 @@ jobs:
 
       - name: Terraform Validate
         id: validate
-        run: terraform -chdir="./infra" validate -no-color -input=false
+        run: terraform -chdir="./infra" validate -no-color
 
       - name: Terraform Plan
         id: plan
