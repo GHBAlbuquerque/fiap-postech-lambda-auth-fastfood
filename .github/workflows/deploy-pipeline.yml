@@ -21,7 +21,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v1
 
-      - name: Terraform fmt
+      - name: Terraform Format
         id: fmt
         run: terraform -chdir="./infra" fmt -check -input=false
         continue-on-error: true
@@ -32,11 +32,11 @@ jobs:
 
       - name: Terraform Validate
         id: validate
-        run: terraform -chdir="./infra" validate -no-color
+        run: terraform -chdir="./infra" validate -no-color -input=false
 
       - name: Terraform Plan
         id: plan
-        run: terraform -chdir="./infra" plan -out -no-color
+        run: terraform -chdir="./infra" plan -out=LAMBDA_AUTH -no-color -input=false
         continue-on-error: true
 
       - name: Terraform Apply
