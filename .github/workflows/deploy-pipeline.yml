@@ -24,7 +24,7 @@ jobs:
 
       - name: Terraform Format
         id: fmt
-        run: terraform -chdir="./infra" fmt -check -input=false
+        run: terraform -chdir="./infra" fmt -check
         continue-on-error: true
 
       - name: Terraform Init
