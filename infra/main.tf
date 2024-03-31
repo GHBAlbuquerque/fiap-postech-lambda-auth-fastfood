@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket = "terraform-state-backend-postech"
-    key    = "terraform.tfstate"
+    key    = "fiap-postech-lambda-auth-fastfood/terraform.tfstate"
     region = "us-east-1"
     encrypt = true
   }
