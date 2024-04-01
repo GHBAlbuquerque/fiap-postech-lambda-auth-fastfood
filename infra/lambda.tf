@@ -12,7 +12,7 @@ resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
   #role          = aws_iam_role.lambda_role.arn
   role          = "arn:aws:iam::211125478754:role/LabRole"
   handler       = "hello.handler"
-  runtime       = "nodejs12.x"
+  runtime       = "nodejs18.x"
   timeout       = 10
   # publish       = true
 }
