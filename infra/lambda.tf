@@ -9,8 +9,8 @@ resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
   source_code_hash = filebase64sha256(data.archive_file.zip.output_path)
 
   function_name = var.project_name
-  #role          = aws_iam_role.lambda_role.arn
-  role          = "arn:aws:iam::211125478754:role/LabRole"
+  # role          = aws_iam_role.lambda_role.arn
+  role          = var.lab_role_arn
   handler       = "hello.handler"
   runtime       = "nodejs18.x"
   timeout       = 10

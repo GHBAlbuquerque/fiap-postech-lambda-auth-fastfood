@@ -9,3 +9,7 @@ variable "region" {
 variable "profile" {
   default = "default"
 }
+
+variable "lab_role_arn" {
+  default = "arn:aws:iam::211125478754:role/LabRole"
+}
