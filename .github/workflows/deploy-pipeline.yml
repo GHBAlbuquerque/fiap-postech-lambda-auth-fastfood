@@ -44,12 +44,12 @@ jobs:
         id: apply
         run: terraform -chdir="./infra" apply -input=false -auto-approve
 
-      - name: Sync S3
-        uses: jakejarvis/s3-sync-action@master
-        env:
-          SOURCE_DIR: './src'
-          AWS_REGION: 'us-east-1'
-          AWS_S3_BUCKET: 'terraform-state-backend-postech'
+#      - name: Sync S3
+#        uses: jakejarvis/s3-sync-action@master
+#        env:
+#          SOURCE_DIR: './lambda'
+#          AWS_REGION: 'us-east-1'
+#          AWS_S3_BUCKET: 'terraform-state-backend-postech'
 
   deploy_source:
     name: build and deploy lambda
