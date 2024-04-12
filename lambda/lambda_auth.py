@@ -101,7 +101,7 @@ def parse_token_data(event):
     response = {'valid': False}
 
     if 'Authorization' not in event['headers']:
-            return response
+        return response
 
     auth_header = event['headers']['Authorization']
     auth_header_list = auth_header.split(' ')
@@ -169,3 +169,7 @@ def validate_token(token):
     # now we can use the claims
     print(claims)
     return claims
+
+
+def greet():
+    return 'Teste lambda auth!'

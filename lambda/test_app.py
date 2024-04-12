@@ -1,6 +1,7 @@
 import lambda_auth
 import unittest
 
+
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
@@ -12,8 +13,9 @@ class TestHelloWorld(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_greeting_message(self):
-        greeting = 'Welcome to CI/CD 101 using CircleCI!'
+        greeting = 'Teste lambda auth!'
         self.assertEqual(lambda_auth.greet(), greeting)
+
 
 if __name__ == '__main__':
     unittest.main()
