@@ -1,7 +1,7 @@
 data "archive_file" "zip" {
   type        = "zip"
-  source_file = "../lambda/lambda-auth.py"
-  output_path = "../lambda/lambda-auth.zip"
+  source_file = "../lambda/lambda_auth.py"
+  output_path = "../lambda/lambda_auth.zip"
 }
 
 resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
@@ -18,7 +18,10 @@ resource "aws_cloudwatch_log_group" "convert_log_group" {
   name = "/aws/lambda/${aws_lambda_function.postech-lambda-auth-fastfood.function_name}"
 }
 
-/*data "archive_file" "zip" {
+/*
+  LAMBDA JAVSCRIPT
+
+  data "archive_file" "zip" {
   type        = "zip"
   source_file = "../lambda/hello.js"
   output_path = "../lambda/hello.zip"
