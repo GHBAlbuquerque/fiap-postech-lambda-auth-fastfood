@@ -1,4 +1,4 @@
-from .. import lambda_auth
+import lambda_auth
 import unittest
 
 class TestHelloWorld(unittest.TestCase):
@@ -16,5 +16,5 @@ class TestHelloWorld(unittest.TestCase):
         self.assertEqual(lambda_auth.greet(), greeting)
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
