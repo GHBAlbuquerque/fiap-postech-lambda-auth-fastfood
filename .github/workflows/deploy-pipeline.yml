@@ -21,7 +21,7 @@ jobs:
       - name: Upgrade pip
         run: pip install --upgrade pip
       - name: Install requirements
-        run: pip install --quiet --requirement /lambda/requirements.txt
+        run: pip install --quiet -r /lambda/requirements.txt
       - name: Run unit tests
         run: python /lambda/test_app.py
 
