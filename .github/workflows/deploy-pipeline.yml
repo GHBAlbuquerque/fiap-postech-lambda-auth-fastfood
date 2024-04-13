@@ -24,10 +24,10 @@ jobs:
         run: pip install --upgrade pip
 
       - name: Install requirements
-        run: pip install --quiet -r requirements.txt -t "./lambda"
+        run: pip install --quiet -r requirements.txt
 
       - name: Run unit tests
-        run: python /lambda/test_app.py
+        run: python /unittest/test_app.py
 
   deploy_terraform_aws:
     name: deploy_terraform

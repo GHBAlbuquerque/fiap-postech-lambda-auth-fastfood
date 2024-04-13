@@ -1,7 +1,7 @@
 data "archive_file" "zip" {
   type        = "zip"
-  source_file = "../lambda/lambda_auth.py"
-  output_path = "../lambda/lambda_auth.zip"
+  source_file = "../lambda_auth.py"
+  output_path = "../lambda_auth.zip"
 }
 
 resource "aws_lambda_function" "postech-lambda-auth-fastfood" {

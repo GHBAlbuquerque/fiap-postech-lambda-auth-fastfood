@@ -1,3 +1,0 @@
-python-jose==3.2.0
-pyinstaller
-pytest
