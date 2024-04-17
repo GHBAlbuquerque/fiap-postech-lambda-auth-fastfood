@@ -27,7 +27,7 @@ jobs:
         run: pip install --quiet -r requirements.txt
 
       - name: Run unit tests
-        run: python ./unittest/test_app.py
+        run: python test_app.py
 #        run: python -m unittest ./unittest/test_app.py
 
   deploy_terraform_aws:
