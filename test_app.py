@@ -1,4 +1,4 @@
-from lambda_auth
+import lambda_auth
 import unittest
 
 class TestHelloWorld(unittest.TestCase):
