@@ -10,7 +10,7 @@ resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
   source_code_hash = filebase64sha256(data.archive_file.zip.output_path)
   role          = var.lab_role_arn
   runtime       = "python3.9"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "lambda_auth.lambda_handler"
   timeout       = 10
 }
 
