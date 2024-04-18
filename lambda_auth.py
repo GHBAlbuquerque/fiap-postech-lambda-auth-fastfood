@@ -10,8 +10,8 @@ def lambda_handler(event, context):
     print(username)
     print(password)
 
-    user_pool_id = 'your-user-pool-id'
-    client_id = 'your-client-id'
+    user_pool_id = 'us-east-1_0ZFQyIZJR'
+    client_id = 'cliente1'
     response = cognito.initiate_auth(
         AuthFlow='USER_PASSWORD_AUTH',
         AuthParameters={
@@ -20,6 +20,7 @@ def lambda_handler(event, context):
         },
         ClientId=client_id
     )
+
     return {
         'statusCode': 200,
         'headers': {
