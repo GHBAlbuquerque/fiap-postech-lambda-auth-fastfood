@@ -1,2 +1,2 @@
 def greet():
-    return 'Teste lambda auth!'
+    return 'Teste pipeline devops - lambda auth!'
