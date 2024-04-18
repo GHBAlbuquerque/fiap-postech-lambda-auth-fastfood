@@ -28,7 +28,3 @@ def lambda_handler(event, context):
         },
         'body': json.dumps(response)
     }
-
-
-def greet():
-    return 'Teste lambda auth!'
