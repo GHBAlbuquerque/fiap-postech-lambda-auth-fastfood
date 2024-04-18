@@ -4,7 +4,8 @@ import unittest
 class TestHelloWorld(unittest.TestCase):
 
     def test_greeting_message(self):
-        greeting = 'Teste lambda auth!'
+        greeting = 'Teste pipeline devops - lambda auth!'
+        print(greeting)
         self.assertEqual(mock_test.greet(), greeting)
 
 
