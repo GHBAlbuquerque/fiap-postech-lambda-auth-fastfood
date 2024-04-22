@@ -3,6 +3,8 @@ import json
 
 cognito = boto3.client('cognito-idp')
 def lambda_handler(event, context):
+    print(event)
+
     username = event['username']
     password = event['password']
 #    cpf = event['cpf']
