@@ -12,10 +12,16 @@ resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
   runtime       = "python3.9"
   handler       = "lambda_auth.lambda_handler"
   timeout       = 10
+  invoke_arn =
 }
 
 resource "aws_cloudwatch_log_group" "convert_log_group" {
   name = "/aws/lambda/${aws_lambda_function.postech-lambda-auth-fastfood.function_name}"
+}
+
+resource "aws_lambda_function_url" "lambda_uel" {
+  function_name      = aws_lambda_function.postech-lambda-auth-fastfood.function_name
+  authorization_type = "NONE"
 }
 
 /*
