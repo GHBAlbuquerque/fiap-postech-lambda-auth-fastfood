@@ -11,16 +11,32 @@ def lambda_handler(event, context):
     print(cpf)
 
     if (cpf == "123"):
-        return {
-            'statusCode': 200,
-            'headers': {
-                'Access-Control-Allow-Origin': '*'
-            }
-        }
+        response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
+    else:
+        response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
-    return {
-        'statusCode': 403
+
+def generatePolicy(principalId, effect, resource, cpf):
+    authResponse = {}
+    authResponse['principalId'] = principalId
+    if (effect and resource):
+        policyDocument = {}
+        policyDocument['Version'] = '2012-10-17'
+        policyDocument['Statement'] = []
+        statementOne = {}
+        statementOne['Action'] = 'execute-api:Invoke'
+        statementOne['Effect'] = effect
+        statementOne['Resource'] = resource
+        policyDocument['Statement'] = [statementOne]
+        authResponse['policyDocument'] = policyDocument
+
+    authResponse['context'] = {
+        "cpf_cliente": cpf
     }
+
+    authResponse_JSON = json.dumps(authResponse)
+
+    return authResponse_JSON
 
 #     username = event['username']
 #     password = event['password']
