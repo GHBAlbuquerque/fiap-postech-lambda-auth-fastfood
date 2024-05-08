@@ -15,6 +15,8 @@ def lambda_handler(event, context):
     else:
         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
+    return response
+
 
 def generatePolicy(principalId, effect, resource, cpf):
     authResponse = {}
