@@ -8,13 +8,15 @@ def lambda_handler(event, context):
     print(event)
 
     cpf = event['headers']['cpf_cliente']
+    password = event['headers']['senha_cliente']
     user_pool_id = 'us-east-1_tDatRvOzb'
     client_id = 'cliente1'
 
     response = cognito.initiate_auth(
         AuthFlow='USER_PASSWORD_AUTH',
         AuthParameters={
-            'USERNAME': cpf
+            'USERNAME': cpf,
+            'PASSWORD': password
         },
         ClientId=client_id
     )
