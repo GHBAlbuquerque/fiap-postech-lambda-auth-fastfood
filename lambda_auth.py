@@ -21,9 +21,9 @@ def lambda_handler(event, context):
         return 'unauthorized'  # Return a 500 error
 
 
-def generatePolicy(principalId, effect, resource, cpf):
+def generatePolicy(principalid, effect, resource, cpf):
     authResponse = {}
-    authResponse['principalId'] = principalId
+    authResponse['principalId'] = principalid
     if (effect and resource):
         policyDocument = {}
         policyDocument['Version'] = '2012-10-17'
