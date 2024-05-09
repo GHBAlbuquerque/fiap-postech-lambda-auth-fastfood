@@ -14,8 +14,11 @@ def lambda_handler(event, context):
         response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
     else:
         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
-
-    return response
+    try:
+        return json.loads(response)
+    except BaseException:
+        print('unauthorized')
+        return 'unauthorized'  # Return a 500 error
 
 
 def generatePolicy(principalId, effect, resource, cpf):
