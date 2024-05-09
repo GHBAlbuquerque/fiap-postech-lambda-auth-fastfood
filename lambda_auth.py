@@ -8,17 +8,20 @@ def lambda_handler(event, context):
     print(event)
 
     cpf = event['headers']['cpf_cliente']
-    print(cpf)
+    user_pool_id = 'us-east-1_tDatRvOzb'
+    client_id = 'cliente1'
 
-    if (cpf == "123"):
-        response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
-    else:
-        response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
-    try:
-        return json.loads(response)
-    except BaseException:
-        print('unauthorized')
-        return 'unauthorized'  # Return a 500 error
+    response = cognito.initiate_auth(
+        AuthFlow='USER_PASSWORD_AUTH',
+        AuthParameters={
+            'USERNAME': cpf
+        },
+        ClientId=client_id
+    )
+
+    print(response)
+
+    return json.loads(response)
 
 
 def generatePolicy(principalid, effect, resource, cpf):
@@ -43,28 +46,18 @@ def generatePolicy(principalid, effect, resource, cpf):
 
     return authResponse_JSON
 
-#     username = event['username']
-#     password = event['password']
-# #    cpf = event['cpf']
+# def lambda_handler(event, context):
+#     print(event)
 #
-#     print(username)
-#     print(password)
+#     cpf = event['headers']['cpf_cliente']
+#     print(cpf)
 #
-#     user_pool_id = 'us-east-1_tDatRvOzb'
-#     client_id = 'cliente1'
-#     response = cognito.initiate_auth(
-#         AuthFlow='USER_PASSWORD_AUTH',
-#         AuthParameters={
-#             'USERNAME': username,
-#             'PASSWORD': password
-#         },
-#         ClientId=client_id
-#     )
-#
-#     return {
-#         'statusCode': 200,
-#         'headers': {
-#             'Access-Control-Allow-Origin': '*'
-#         },
-#         'body': json.dumps(response)
-#     }
+#     if (cpf == "123"):
+#         response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
+#     else:
+#         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
+#     try:
+#         return json.loads(response)
+#     except BaseException:
+#         print('unauthorized')
+#         return 'unauthorized'  # Return a 500 error
