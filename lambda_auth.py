@@ -4,7 +4,7 @@ import json
 cognito = boto3.client('cognito-idp')
 
 
-def lambda_handler(event, context):
+async def lambda_handler(event, context):
     print(event)
 
     cpf = event['headers']['cpf_cliente']
