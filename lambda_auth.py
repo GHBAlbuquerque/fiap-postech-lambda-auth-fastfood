@@ -5,23 +5,27 @@ cognito = boto3.client('cognito-idp')
 
 
 def lambda_handler(event, context):
-    print(event)
+    print(json.dumps(event, indent=2))
 
     cpf = event['headers']['cpf_cliente']
     password = event['headers']['senha_cliente']
-    user_pool_id = 'us-east-1_tDatRvOzb'
     client_id = '6p31a7352s7eot7v5dgapn7do9'
 
-    response = cognito.initiate_auth(
-        AuthFlow='USER_PASSWORD_AUTH',
-        AuthParameters={
-            'USERNAME': cpf,
-            'PASSWORD': password
-        },
-        ClientId=client_id
-    )
+    try:
+        responseCognito = cognito.initiate_auth(
+            AuthFlow='USER_PASSWORD_AUTH',
+            AuthParameters={
+                'USERNAME': cpf,
+                'PASSWORD': password
+            },
+            ClientId=client_id
+        )
 
-    print(response)
+        print(json.dumps(responseCognito, indent=2))
+
+        response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
+    except:
+        response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
     return json.loads(response)
 
