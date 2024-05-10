@@ -51,19 +51,3 @@ def generatePolicy(principalid, effect, resource, cpf):
     authResponse_JSON = json.dumps(authResponse)
 
     return authResponse_JSON
-
-# def lambda_handler(event, context):
-#     print(event)
-#
-#     cpf = event['headers']['cpf_cliente']
-#     print(cpf)
-#
-#     if (cpf == "123"):
-#         response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
-#     else:
-#         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
-#     try:
-#         return json.loads(response)
-#     except BaseException:
-#         print('unauthorized')
-#         return 'unauthorized'  # Return a 500 error
