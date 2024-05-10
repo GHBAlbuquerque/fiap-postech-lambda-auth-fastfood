@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     cpf = event['headers']['cpf_cliente']
     password = event['headers']['senha_cliente']
     user_pool_id = 'us-east-1_tDatRvOzb'
-    client_id = 'cliente1'
+    client_id = '6p31a7352s7eot7v5dgapn7do9'
 
     response = cognito.initiate_auth(
         AuthFlow='USER_PASSWORD_AUTH',
