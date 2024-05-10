@@ -24,7 +24,11 @@ def lambda_handler(event, context):
         print(json.dumps(responseCognito, indent=2))
 
         response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
-    except:
+
+    except Exception as error:
+
+        print(json.dumps(error, indent=2))
+
         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
     return json.loads(response)
