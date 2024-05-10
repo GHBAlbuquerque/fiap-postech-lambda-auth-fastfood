@@ -9,7 +9,7 @@ def lambda_handler(event, context):
 
     cpf = event['headers']['cpf_cliente']
     password = event['headers']['senha_cliente']
-    client_id = '6p31a7352s7eot7v5dgapn7do9'
+    client_id = '2ndm53qhe7q5auf5qhb0i6dp21'
 
     try:
         responseCognito = cognito.initiate_auth(
@@ -27,7 +27,7 @@ def lambda_handler(event, context):
 
     except Exception as error:
 
-        print(json.dumps(error, indent=2))
+        print('Cognito Response ----- : ' + error.__str__())
 
         response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
