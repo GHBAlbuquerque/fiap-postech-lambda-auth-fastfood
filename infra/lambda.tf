@@ -5,13 +5,13 @@ data "archive_file" "zip" {
 }
 
 resource "aws_lambda_function" "postech-lambda-auth-fastfood" {
-  function_name = var.project_name
-  filename      = data.archive_file.zip.output_path
+  function_name    = var.project_name
+  filename         = data.archive_file.zip.output_path
   source_code_hash = filebase64sha256(data.archive_file.zip.output_path)
-  role          = var.lab_role_arn
-  runtime       = "python3.9"
-  handler       = "lambda_auth.lambda_handler"
-  timeout       = 10
+  role             = var.lab_role_arn
+  runtime          = "python3.9"
+  handler          = "lambda_auth.lambda_handler"
+  timeout          = 10
 }
 
 resource "aws_cloudwatch_log_group" "convert_log_group" {

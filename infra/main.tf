@@ -9,9 +9,9 @@ terraform {
   #  required_version = ">=0.14.9"
 
   backend "s3" {
-    bucket = "terraform-state-backend-postech-new"
-    key    = "fiap-postech-lambda-auth-fastfood/terraform.tfstate"
-    region = "us-east-1"
+    bucket  = var.tf_state_bucket_key
+    key     = "fiap-postech-lambda-auth-fastfood/terraform.tfstate"
+    region  = "us-east-1"
     encrypt = true
   }
 }
