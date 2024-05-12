@@ -1,5 +1,5 @@
 # 🚀 FIAP : Challenge Pós-Tech Software Architecture
-## 🍔 Projeto Fast Food | Arquitetura Limpa
+## 🍔 Projeto Fast Food | Lambda de Autenticação
 
 Projeto realizado para a Fase 3 da Pós-Graduação de Arquitetura de Sistemas da FIAP. Lambda de autenticação para uso da API fastfood do Tech Challenge
 
