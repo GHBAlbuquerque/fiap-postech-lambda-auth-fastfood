@@ -10,7 +10,6 @@ def lambda_handler(event, context):
     cpf = event['headers']['cpf_cliente']
     password = event['headers']['senha_cliente']
     client_id = '6k5mdu6phj71shabf9jtea4otv'
-    error_not_confirmed = 'UserNotConfirmedException'
 
     try:
         response_cognito = cognito.initiate_auth(
@@ -30,11 +29,7 @@ def lambda_handler(event, context):
 
         print('Cognito Response ----- : ' + error.__str__())
 
-        #FIXME arranjar uma maneira de confirmar o usuario. E-mail recebido nao tem link, lambda de automação não funcionou.
-        if error.__str__().__contains__(error_not_confirmed):
-            response = generatePolicy(cpf, 'Allow', event['methodArn'], cpf)
-        else:
-            response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
+        response = generatePolicy(cpf, 'Deny', event['methodArn'], cpf)
 
     return json.loads(response)
 
