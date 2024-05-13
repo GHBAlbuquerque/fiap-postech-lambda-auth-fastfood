@@ -11,5 +11,5 @@ variable "profile" {
 }
 
 variable "lab_role_arn" {
-  default = "arn:aws:iam::067184771399:role/LabRole"
+  default = "labrole"
 }
