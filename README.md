@@ -2,12 +2,14 @@
 ## 🍔 Projeto Fast Food | Lambda de Autenticação
 
 Projeto realizado para a Pós-Graduação de Arquitetura de Sistemas da FIAP. Criação de um sistema de autoatendimento para uma lanchonete.
+
 <br/>
 
 ### 👨‍🏫 Grupo
 
 Integrantes:
 - Giovanna H. B. Albuquerque (RM352679)
+
 <br/>
 
 ### 📍 DDD
@@ -16,6 +18,7 @@ Estudos de Domain Driven Design (DDD) como Domain StoryTelling, EventStorming, L
 Os resultados destes estudos estão disponíveis no link abaixo:
 
 **🔗 MIRO com DDD: https://miro.com/app/board/uXjVNMo8BCE=/?share_link_id=24975843522**
+
 <br/>
 
 ### 📐 Desenho de Solução (Arquitetura)
