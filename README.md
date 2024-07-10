@@ -4,11 +4,13 @@
 Projeto realizado para a Pós-Graduação de Arquitetura de Sistemas da FIAP. Criação de um sistema de autoatendimento para uma lanchonete.
 
 ###
+###
 ### 👨‍🏫 Grupo
 
 Integrantes:
 - Giovanna H. B. Albuquerque (RM352679)
 
+###
 ###
 ### 📍 DDD
 
@@ -17,6 +19,7 @@ Os resultados destes estudos estão disponíveis no link abaixo:
 
 **🔗 MIRO com DDD: https://miro.com/app/board/uXjVNMo8BCE=/?share_link_id=24975843522**
 
+###
 ###
 ### 📐 Desenho de Solução (Arquitetura)
 
