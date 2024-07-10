@@ -62,6 +62,7 @@ Para instruções detalhadas de como rodar este projeto, leia **[este guia](http
 ## Autores
 
 Giovanna Albuquerque: @GHBAlbuquerque (https://github.com/GHBAlbuquerque)
+
 FIAP: @FIAP Software Architecture (https://postech.fiap.com.br/curso/software-architecture/
 
 Feito em 2024
