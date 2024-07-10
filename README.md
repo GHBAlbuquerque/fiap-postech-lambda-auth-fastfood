@@ -42,14 +42,22 @@ Tecnologias utilizadas no projeto:
 ## 🎬 Como executar este projeto?
 
 Compõem esta entrega:
-> * Repositório da Lambda de Autenticação - https://github.com/GHBAlbuquerque/fiap-postech-lambda-auth-fastfood
-> * Repositório da Infra (EKS, Load Balancer, Security Group) - https://github.com/GHBAlbuquerque/fiap-postech-infra-fastfood-eks
-> * Repositório da Infra (ApiGateway e Cognito User Pools) - https://github.com/GHBAlbuquerque/fiap-postech-infra-fastfood
-> * Repositório das Tabelas Dynamo - https://github.com/GHBAlbuquerque/fiap-postech-infra-dynamo
-> * Repositório da Base de Dados RDS - https://github.com/GHBAlbuquerque/fiap-postech-infra-rds
-> * Repositório da App de Cliente - https://github.com/GHBAlbuquerque/fiap-postech-fastfood-cliente
-> * Repositório da App de Produto - https://github.com/GHBAlbuquerque/fiap-postech-fastfood-produto
-> * Repositório da App de Pedido - https://github.com/GHBAlbuquerque/fiap-postech-fastfood-pedido
+> * Repositório da Lambda de Autenticação
+>   * https://github.com/GHBAlbuquerque/fiap-postech-lambda-auth-fastfood
+> * Repositório da Infra (EKS, Load Balancer, Security Group) 
+>   * https://github.com/GHBAlbuquerque/fiap-postech-infra-fastfood-eks
+> * Repositório da Infra (ApiGateway e Cognito User Pools)
+>   * https://github.com/GHBAlbuquerque/fiap-postech-infra-fastfood
+> * Repositório das Tabelas Dynamo
+>   * https://github.com/GHBAlbuquerque/fiap-postech-infra-dynamo
+> * Repositório da Base de Dados RDS
+>   * https://github.com/GHBAlbuquerque/fiap-postech-infra-rds
+> * Repositório da App de Cliente
+>   * https://github.com/GHBAlbuquerque/fiap-postech-fastfood-cliente
+> * Repositório da App de Produto 
+>   * https://github.com/GHBAlbuquerque/fiap-postech-fastfood-produto
+> * Repositório da App de Pedido
+>   * https://github.com/GHBAlbuquerque/fiap-postech-fastfood-pedido
 
 <br/>
 
