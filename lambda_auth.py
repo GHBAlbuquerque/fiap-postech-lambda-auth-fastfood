@@ -9,7 +9,7 @@ def lambda_handler(event, context):
 
     cpf = event['headers']['cpf_cliente']
     password = event['headers']['senha_cliente']
-    client_id = '17u8qu5sh0aega9rk7g4sh61i4'
+    client_id = '5knk8gad7neb3h7n91rpcigicu'
 
     try:
         response_cognito = cognito.initiate_auth(
